@@ -1,6 +1,7 @@
 let chalk = require('chalk');
 
 const app = require('./src/app');
+const router = app
 
 // port
 let port = 3000;
@@ -15,3 +16,6 @@ if (process.argv[2] && !isNaN(process.argv[2])) {
 app.listen(port, function () {
     console.log(chalk.green('Server listening on port : ' + port));
 });
+
+// Add routers
+app.use(require('./src/router'));
